@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '^+nz-4)f8fcl%jsn7v+1k@l*o!gt#b#zn1z@gdpd8(jmkqrdx4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = ['guarded-beach-96655.herokuapp.com', 'localhost']
