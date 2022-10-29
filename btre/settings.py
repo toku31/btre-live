@@ -28,7 +28,7 @@ SECRET_KEY = '^+nz-4)f8fcl%jsn7v+1k@l*o!gt#b#zn1z@gdpd8(jmkqrdx4'
 DEBUG = True
 
 # ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['btrealestate-site.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['btrealestate-site.herokuapp.com', 'localhost', '127.0.0.1']
 # ALLOWED_HOSTS = ['127.0.0.1']
 
 # Application definition
