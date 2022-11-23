@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '^+nz-4)f8fcl%jsn7v+1k@l*o!gt#b#zn1z@gdpd8(jmkqrdx4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = ['btre-live-production.up.railway.app', 'localhost', '127.0.0.1']
@@ -85,18 +85,18 @@ WSGI_APPLICATION = 'btre.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'btredb',
-#         'USER': 'postgres',
-#         'PASSWORD': 'postgres',
-#         'HOST': 'localhost'
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'btredb',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost'
+    }
+}
 
 # DATABASES = {'default': dj_database_url.config(default='postgres://user:pass@localhost/dbname')}
-DATABASES = {'default': dj_database_url.config(default='postgres://postgres:postgres@localhost/btredb')}
+# DATABASES = {'default': dj_database_url.config(default='postgres://postgres:postgres@localhost/btredb')}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -134,17 +134,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+# STATIC_ROOT= os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT= os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
+
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    # os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'btre/static')
 ]
 
 # Media Folder Settings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATIC_ROOT= os.path.join(BASE_DIR, 'staticfiles')
-# STATIC_ROOT= ""
+MEDIA_URL = '/media/'
 
 # if DEBUG:
 #     STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
@@ -162,14 +164,14 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
 
-# try:
-#     from .local_settings import *
-# except ImportError:
-#     pass
+try:
+    from .local_settings import *
+except ImportError:
+    pass
 
 # Email sending
 
 # whitenoise settings
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
-CSRF_TRUSTED_ORIGINS = ['https://btre-live-production.up.railway.app']
+# CSRF_TRUSTED_ORIGINS = ['https://btre-live-production.up.railway.app']
