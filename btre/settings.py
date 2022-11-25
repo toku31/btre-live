@@ -29,7 +29,8 @@ SECRET_KEY = '^+nz-4)f8fcl%jsn7v+1k@l*o!gt#b#zn1z@gdpd8(jmkqrdx4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = FALSE
 
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['django-render-l71n.onrender.com', 'localhost', '127.0.0.1']
 # ALLOWED_HOSTS = ['btre-live-production.up.railway.app', 'localhost', '127.0.0.1']
 # ALLOWED_HOSTS = ['btrealestate-site.herokuapp.com', 'localhost', '127.0.0.1']
 # ALLOWED_HOSTS = ['127.0.0.1']
@@ -177,6 +178,6 @@ except ImportError:
 # Email sending
 
 # whitenoise settings
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 # CSRF_TRUSTED_ORIGINS = ['https://btre-live-production.up.railway.app']
